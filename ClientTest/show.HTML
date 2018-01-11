@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>test</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script >
+		
+		var goAjax=function(){
+			var url1="http://localhost:8080/ServletDemo/Workcenter";
+			alert(url1);
+			$.ajax({
+
+				url:url1,  
+				type:'POST',  
+				dataType:'json',  
+				data:{
+					name:'zhanghao'
+				},				
+				timeout:20000,  
+				success:function(val){
+					//show val to browser console
+					console.log(val);
+					//alert 
+					alert(val['name']);
+				}	
+			});
+		}
+
+	</script>
+</head>
+<body>
+	<button onclick="goAjax()">点击</button>
+	
+</body>
+</html>
